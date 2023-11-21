@@ -4,6 +4,12 @@
 - Microsoft Sql Server
 - File Database Attach as "**Freelancers.bak**"
 
+#**For Your Information Skills**
+
+![image](https://github.com/khuzairie1306/FreelancerListAPI/assets/151608761/c670fe1f-a5ac-4c9a-a819-c72df5d179a5)
+
+
+
 Step To Test (By Swagger to Restful API)
 
 1) Listing of Freelance
