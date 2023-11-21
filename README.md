@@ -2,7 +2,7 @@
 # Details
 - microsoft visual studio 2022
 - Microsoft Sql Server
-- File Database Attach Into folder database
+- File Database Attach as "**Freelances.bak**"
 
 Step To Test (User Interface)
 Run Application 
