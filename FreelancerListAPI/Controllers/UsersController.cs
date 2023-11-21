@@ -230,16 +230,20 @@ namespace FreelancerListAPI.Controllers
             try
             {
                 var users = _context.UsersFreelances.Find(id);
-
-                var usersSkill = _context.UsersSkills.Where(x=>x.userid == id);
+               
                 if (users == null)
                 {
                     return NotFound($"User {id} Details Not Found");
 
                 }
                 _context.Remove(users);
-                _context.RemoveRange(usersSkill);
                 _context.SaveChanges();
+
+                var usersskills = _context.UsersSkills.Where(x => x.userid == id).ToList();
+
+                _context.RemoveRange(usersskills);
+                _context.SaveChanges();
+
                 return Ok("Users Details has been deleted at our System ,Thank you");
             }
             catch (Exception ex)

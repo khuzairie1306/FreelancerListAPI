@@ -4,70 +4,92 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Freelance List</h1>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">List Freelance</h3>
+            </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Username)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
+    
 
-            <th>
-                @Html.DisplayNameFor(model => model.SkillSet)
+            <!-- /.card-header -->
+            <div class="card-body">
+                <p>
+                    <a class="btn btn-primary" asp-action="Create">Create New</a>
+                </p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Username)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PhoneNumber)
+                            </th>
 
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hobby)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-                <td>
-                    <p>
-                    @foreach (var itemtest in item.SkillSet)
-                    {
-                            @(itemtest.skillname + ",")
-                            
+                            <th>
+                                @Html.DisplayNameFor(model => model.SkillSet)
+
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Hobby)
+                            </th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                  
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Username)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                </td>
+                                <td>
+                                    <p>
+                                        @foreach (var itemtest in item.SkillSet)
+                                        {
+                                            @(itemtest.skillname + ",")
+
+                                        }
+
+                                    </p>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Hobby)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                </td>
+                            </tr>
                         }
-                    
-                    </p>
-                </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hobby)
-            </td>
-            <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+          
+        </div>
+        <!-- /.card -->
+
+    </div>
+    <!-- /.col -->
+   
+</div>

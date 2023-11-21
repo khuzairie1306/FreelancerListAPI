@@ -154,7 +154,7 @@ namespace FreelanceFrontEnd.Controllers
                 HttpResponseMessage response = _client.GetAsync(_client.BaseAddress + "/Users/GetUsers/" + id).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    string data = response.Content.ReadAsStringAsync().Result;
+                    string data = response.Content.ReadAsStringAsync().Result.TrimStart('[').TrimEnd(']');
                     usersViewModel = JsonConvert.DeserializeObject<UsersViewModel>(data);
                 }
                 return View(usersViewModel);
@@ -186,7 +186,7 @@ namespace FreelanceFrontEnd.Controllers
                 TempData["errorMessage"] = ex.Message;
                 return View();
             }
-            return View();
+            return Redirect("Index");
         }
     }
 }
