@@ -4,7 +4,7 @@
 - Microsoft Sql Server
 - File Database Attach Into folder database
 
-Step To Test
+Step To Test (User Interface)
 Run Application 
 
 1) Listing of Freelance
@@ -28,4 +28,7 @@ Run Application
 6) Delete - > Click Link "**Delete**" into index list of freelance above and will display picture as attachment below
 ![image](https://github.com/khuzairie1306/FreelancerListAPI/assets/151608761/85d01ff0-cc25-4f65-9a67-c19678f4af58)
 
-7)  
+7)  It will show success delete user
+
+   ![image](https://github.com/khuzairie1306/FreelancerListAPI/assets/151608761/cc22cece-81e8-48dc-9c22-8c2952246c5b)
+
