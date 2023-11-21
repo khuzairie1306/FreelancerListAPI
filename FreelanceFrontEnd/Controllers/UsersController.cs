@@ -156,7 +156,14 @@ namespace FreelanceFrontEnd.Controllers
                 {
                     string data = response.Content.ReadAsStringAsync().Result.TrimStart('[').TrimEnd(']');
                     usersViewModel = JsonConvert.DeserializeObject<UsersViewModel>(data);
+
+                    if(usersViewModel == null)
+                    {
+                        return Redirect("/Users/Index");
+                    }
+                
                 }
+                
                 return View(usersViewModel);
             }
             catch (Exception ex)
@@ -184,7 +191,7 @@ namespace FreelanceFrontEnd.Controllers
             {
 
                 TempData["errorMessage"] = ex.Message;
-                return View();
+                return Redirect("Index");
             }
             return Redirect("Index");
         }

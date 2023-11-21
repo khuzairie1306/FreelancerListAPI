@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Delete";
+    
+    
 }
 
 <h1>Delete</h1>
@@ -38,6 +40,7 @@
                     <div class="form-group">
                         <label class="control-label mt-1">SkillSet</label>
                         <br />
+                        
                         @if(Model.SkillSet.Count() > 0)
                             {
                                 @for (int i = 0; i < Model.SkillSet.Count(); i++)
