@@ -1,4 +1,4 @@
-![image](https://github.com/khuzairie1306/FreelancerListAPI/assets/151608761/6923d426-a098-4956-a155-eccb868a29bd)# Freelancer
+# Freelancer
 # Details
 - microsoft visual studio 2022
 - Microsoft Sql Server
